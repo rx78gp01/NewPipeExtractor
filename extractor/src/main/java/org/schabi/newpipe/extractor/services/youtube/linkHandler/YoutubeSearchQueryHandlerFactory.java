@@ -49,7 +49,7 @@ public final class YoutubeSearchQueryHandlerFactory extends SearchQueryHandlerFa
             case PLAYLISTS:
                 return SEARCH_URL + encodeUrlUtf8(searchString) + "&sp=EgIQA_ABAQ%253D%253D";
             case LIVE_STREAMS:
-                return SEARCH_URL + encodeUrlUtf8(searchString) + "&sp=EgJAAQ%253D%253D";
+                return SEARCH_URL + encodeUrlUtf8(searchString) + "&sp=EgJAAfABAQ%253D%253D";
             case MUSIC_SONGS:
             case MUSIC_VIDEOS:
             case MUSIC_ALBUMS:
@@ -91,7 +91,7 @@ public final class YoutubeSearchQueryHandlerFactory extends SearchQueryHandlerFa
                 case PLAYLISTS:
                     return "EgIQA_ABAQ%3D%3D";
                 case LIVE_STREAMS:
-                    return "EgJAAQ%3D%3D";
+                    return "EgJAAfABAQ%3D%3D";
                 case MUSIC_SONGS:
                 case MUSIC_VIDEOS:
                 case MUSIC_ALBUMS:
