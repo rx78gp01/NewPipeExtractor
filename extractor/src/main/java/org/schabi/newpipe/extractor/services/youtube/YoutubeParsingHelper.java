@@ -165,7 +165,7 @@ public final class YoutubeParsingHelper {
      * such as <a href="https://www.apkmirror.com/apk/google-inc/youtube/">APKMirror</a>.
      * </p>
      */
-    private static final String ANDROID_YOUTUBE_CLIENT_VERSION = "17.31.35";
+    private static final String ANDROID_YOUTUBE_CLIENT_VERSION = "17.34.35";
 
     /**
      * The InnerTube API key used by the {@code ANDROID} client. Found with the help of
