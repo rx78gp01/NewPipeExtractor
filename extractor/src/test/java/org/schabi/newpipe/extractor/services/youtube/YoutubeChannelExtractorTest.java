@@ -758,7 +758,8 @@ public class YoutubeChannelExtractorTest {
 
         @Test
         public void testBannerUrl() throws Exception {
-            // CarouselHeaderRender does not contain a banner
+            // CarouselHeaderRenders do not contain a banner
+            assertNull(extractor.getBannerUrl());
         }
 
         @Test
