@@ -19,6 +19,7 @@ public final class YoutubeSearchQueryHandlerFactory extends SearchQueryHandlerFa
     public static final String VIDEOS = "videos";
     public static final String CHANNELS = "channels";
     public static final String PLAYLISTS = "playlists";
+    public static final String LIVE_STREAMS = "live_streams";
 
     public static final String MUSIC_SONGS = "music_songs";
     public static final String MUSIC_VIDEOS = "music_videos";
@@ -47,6 +48,8 @@ public final class YoutubeSearchQueryHandlerFactory extends SearchQueryHandlerFa
                 return SEARCH_URL + encodeUrlUtf8(searchString) + "&sp=EgIQAvABAQ%253D%253D";
             case PLAYLISTS:
                 return SEARCH_URL + encodeUrlUtf8(searchString) + "&sp=EgIQA_ABAQ%253D%253D";
+            case LIVE_STREAMS:
+                return SEARCH_URL + encodeUrlUtf8(searchString) + "&sp=EgJAAQ%253D%253D";
             case MUSIC_SONGS:
             case MUSIC_VIDEOS:
             case MUSIC_ALBUMS:
@@ -68,7 +71,8 @@ public final class YoutubeSearchQueryHandlerFactory extends SearchQueryHandlerFa
                 MUSIC_SONGS,
                 MUSIC_VIDEOS,
                 MUSIC_ALBUMS,
-                MUSIC_PLAYLISTS
+                MUSIC_PLAYLISTS,
+                LIVE_STREAMS
                 // MUSIC_ARTISTS
         };
     }
@@ -86,6 +90,8 @@ public final class YoutubeSearchQueryHandlerFactory extends SearchQueryHandlerFa
                     return "EgIQAvABAQ%3D%3D";
                 case PLAYLISTS:
                     return "EgIQA_ABAQ%3D%3D";
+                case LIVE_STREAMS:
+                    return "EgJAAQ%3D%3D";
                 case MUSIC_SONGS:
                 case MUSIC_VIDEOS:
                 case MUSIC_ALBUMS:
