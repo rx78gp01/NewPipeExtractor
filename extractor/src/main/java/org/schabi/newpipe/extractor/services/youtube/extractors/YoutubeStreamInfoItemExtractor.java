@@ -172,7 +172,7 @@ public class YoutubeStreamInfoItemExtractor implements StreamInfoItemExtractor {
                     return -1;
                 }
 
-                throw new ParsingException("Could not get duration");
+                //throw new ParsingException("Could not get duration");
             }
         }
 
