@@ -9,6 +9,7 @@ import static org.schabi.newpipe.extractor.services.youtube.linkHandler.YoutubeS
 import static org.schabi.newpipe.extractor.services.youtube.linkHandler.YoutubeSearchQueryHandlerFactory.CHANNELS;
 import static org.schabi.newpipe.extractor.services.youtube.linkHandler.YoutubeSearchQueryHandlerFactory.PLAYLISTS;
 import static org.schabi.newpipe.extractor.services.youtube.linkHandler.YoutubeSearchQueryHandlerFactory.VIDEOS;
+import static org.schabi.newpipe.extractor.services.youtube.linkHandler.YoutubeSearchQueryHandlerFactory.LIVE_STREAMS;
 import static org.schabi.newpipe.extractor.services.youtube.linkHandler.YoutubeSearchQueryHandlerFactory.getSearchParameter;
 import static org.schabi.newpipe.extractor.utils.Utils.isNullOrEmpty;
 
@@ -67,6 +68,7 @@ public class YoutubeSearchExtractor extends SearchExtractor {
     private final boolean extractVideoResults;
     private final boolean extractChannelResults;
     private final boolean extractPlaylistResults;
+    private final boolean extractLiveResults;
 
     private JsonObject initialData;
 
@@ -84,6 +86,8 @@ public class YoutubeSearchExtractor extends SearchExtractor {
                 || CHANNELS.equals(searchType);
         extractPlaylistResults = searchType == null || ALL.equals(searchType)
                 || PLAYLISTS.equals(searchType);
+        extractLiveResults = searchType == null || ALL.equals(searchType)
+                || LIVE_STREAMS.equals(searchType);
     }
 
     @Override
@@ -232,7 +236,7 @@ public class YoutubeSearchExtractor extends SearchExtractor {
                 throw new NothingFoundException(
                         getTextFromObject(item.getObject("backgroundPromoRenderer")
                                 .getObject("bodyText")));
-            } else if (extractVideoResults && item.has("videoRenderer")) {
+            } else if ((extractVideoResults || extractLiveResults) && item.has("videoRenderer")) {
                 collector.commit(new YoutubeStreamInfoItemExtractor(
                         item.getObject("videoRenderer"), timeAgoParser));
             } else if (extractChannelResults && item.has("channelRenderer")) {
