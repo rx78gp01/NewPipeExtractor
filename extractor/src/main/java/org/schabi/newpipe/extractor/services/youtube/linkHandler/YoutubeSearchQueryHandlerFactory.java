@@ -47,7 +47,7 @@ public final class YoutubeSearchQueryHandlerFactory extends SearchQueryHandlerFa
                 switch (contentFilter) {
                     case VIDEOS:
                         return SEARCH_URL + encodeUrlUtf8(searchString)
-                                + "&sp=EgIQAfABAQ%253D%253D";
+                                + "&sp=CALwAQE%253D";
                     case CHANNELS:
                         return SEARCH_URL + encodeUrlUtf8(searchString)
                                 + "&sp=EgIQAvABAQ%253D%253D";
@@ -96,7 +96,7 @@ public final class YoutubeSearchQueryHandlerFactory extends SearchQueryHandlerFa
 
         switch (contentFilter) {
                 case VIDEOS:
-                    return "EgIQAfABAQ%3D%3D";
+                    return "CALwAQE%3D";
                 case CHANNELS:
                     return "EgIQAvABAQ%3D%3D";
                 case PLAYLISTS:
