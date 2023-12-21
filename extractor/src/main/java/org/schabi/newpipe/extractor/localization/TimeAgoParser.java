@@ -83,6 +83,10 @@ public class TimeAgoParser {
             results.add(matcher.toMatchResult());
         }
 
+        if (results.stream().isEmpty()) {
+           return 60;
+        }
+
         return results.stream()
                 .map(match -> {
                     final String digits = match.group(1);
